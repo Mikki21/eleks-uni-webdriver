@@ -1,10 +1,8 @@
-import HeaderPage from "../header/header.page";
-import BasePage from "../base/basePage";
+import BasePage from "../base/basePage.js";
 
-export default class AboutUsPage extends BasePage{
+class AboutUsPage extends BasePage{
     constructor() {
         super();
-        this.header = HeaderPage;
     }
 
     get allSocials(){
@@ -12,7 +10,9 @@ export default class AboutUsPage extends BasePage{
     }
 
     async open(){
-        await super.openURLWithSize('/#/about');
+        await super.open('/#/about');
     }
 
 }
+
+export default new AboutUsPage();

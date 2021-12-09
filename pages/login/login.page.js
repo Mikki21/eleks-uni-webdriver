@@ -1,18 +1,13 @@
-import BasePage from "../base/basePage";
-import InputElement from "../../elements/input.element";
-import{ email, password, logIn } from "./login.locators"
-import ButtonElement from "../../elements/button.element";
-import HeaderPage from "../header/header.page";
+import BasePage from "../base/basePage.js";
+import InputElement from "../../elements/input.element.js";
+import { email, password, logIn, notYetCustomer } from "./login.locators.js"
+import ButtonElement from "../../elements/button.element.js";
+import RegistrationPage from "../registration/registration.page";
 
-export default class LoginPage extends BasePage{
+class LoginPage extends BasePage{
 
     constructor() {
         super();
-        this.header = HeaderPage;
-    }
-
-    get url(){
-        return '/login';
     }
 
     getLoginError(){
@@ -20,19 +15,31 @@ export default class LoginPage extends BasePage{
     }
 
     get emailInput(){
-        return new InputElement($(email.input),"EmailInput");
+        return new InputElement($(email.input),"emailInput");
     }
 
     get passwordInput(){
-        return new InputElement($(password.input),"PasswordInput");
+        return new InputElement($(password.input),"passwordInput");
     }
 
     get loginModalButton(){
         return new ButtonElement($(logIn.button),"loginModalButton");
     }
 
+    get notYetCustomerButton(){
+        return new ButtonElement($(notYetCustomer),"notYetCustomerButton");
+    }
+    
+    async openRegister(){
+        await this.notYetCustomerButton.click();
+        return RegistrationPage;
+        
+    }
+
     async open(){
-        await super.openURLWithSize();
+        await super.open('/#/login');
     }
 
 }
+
+export default new LoginPage();

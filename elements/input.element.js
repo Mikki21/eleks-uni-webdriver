@@ -1,4 +1,4 @@
-import BaseElement from "./base.element";
+import BaseElement from "./base.element.js";
 
 export default class InputElement extends BaseElement{
     constructor(wdioElement,name) {

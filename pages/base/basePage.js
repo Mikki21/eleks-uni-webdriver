@@ -1,10 +1,15 @@
-export default class BasePage{
+import HeaderPage from "../header/header.page";
 
-    async openURLWithSize(url=''){
+export default class BasePage{
+    async open(url=''){
         await browser.url(url);
     }
     get title() {
         return browser.getTitle()
+    }
+
+    get header() {
+        return HeaderPage;
     }
 
     get URL() {
@@ -17,7 +22,16 @@ export default class BasePage{
         await this.popUpDissmiss.click();
     }
 
+
+
     get popUpDissmiss(){
         return browser.$("//*[@id='mat-dialog-0']/app-welcome-banner/div/div[2]/button[2]")
     }
+
+    async openLoginPage(){
+        await this.header.accountButton.click();
+        await this.header.loginButton.click();
+    }
+
+
 }

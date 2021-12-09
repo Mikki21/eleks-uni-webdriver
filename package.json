@@ -4,7 +4,7 @@
   "description": "Eleks webdriver tasks",
   "main": "index.js",
   "scripts": {
-    "test": "npx wdio run wdio.conf.js ./test/specs/aboutUs"
+    "test": "npx wdio run wdio.conf.js"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +19,7 @@
     "@wdio/mocha-framework": "^7.16.6",
     "@wdio/selenium-standalone-service": "^7.16.6",
     "@wdio/spec-reporter": "^7.16.9",
-    "randomstring": "^1.2.1"
+    "randomstring": "^1.2.1",
+    "yarn": "^1.22.17"
   }
 }

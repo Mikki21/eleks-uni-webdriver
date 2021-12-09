@@ -1,4 +1,4 @@
-import BaseElement from "./base.element";
+import BaseElement from "./base.element.js";
 
 export default class ButtonElement extends BaseElement{
     constructor(wdioElement,name) {
@@ -8,6 +8,7 @@ export default class ButtonElement extends BaseElement{
     async click(){
         if(!(await super.isDisplayed()))
             throw `${this.elementName} is missed!`
+
         await this.wdioElement.click();
     }
 }

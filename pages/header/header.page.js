@@ -1,5 +1,5 @@
-import ButtonElement from "../../elements/button.element";
-export class HeaderPage{
+import ButtonElement from "../../elements/button.element.js";
+class HeaderPage{
 
     get sideMenu(){
         return new ButtonElement(browser.$("//app-navbar//*[contains(@aria-label,'Open Sidenav')]"));
