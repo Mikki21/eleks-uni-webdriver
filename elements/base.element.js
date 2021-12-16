@@ -8,7 +8,11 @@ export default class BaseElement{
         return this.wdioElement.isDisplayed();
     }
 
-    async waitForElementToDisappear(timeout){
-        await browser.waitUntil(async ()=> !this.wdioElement.isClickable(),{timeout:timeout,timeoutMsg: `expected ${this.elementName} to disappear after ${timeout} ms`})
+    async waitForExist(){
+        await this.wdioElement.waitForExist({reverse:true})
+    }
+
+    async waitForDisappear(){
+        await this.wdioElement.waitForDisplayed({reverse:true})
     }
 }

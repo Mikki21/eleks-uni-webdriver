@@ -8,6 +8,12 @@ export default class BasePage{
         return browser.getTitle()
     }
 
+   async waitForBaseElementToDisappear() {
+        await this.baseElement.waitForExist();
+    }
+
+    get baseElement(){}
+
     get header() {
         return HeaderPage;
     }

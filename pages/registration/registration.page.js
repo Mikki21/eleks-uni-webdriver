@@ -37,11 +37,9 @@ class RegistrationPage extends BasePage{
         return new DropdownElement($("//*[@id=\"mat-select-0\"]"), "Security question");
     }
 
-    get getBaseElement(){
-        return new BaseElement($("//simple-snack-bar//div[@className='mat-simple-snackbar-action']"),"ForceReload page popup")
+    get baseElement(){
+        return new BaseElement($("//*[@id=\"cdk-overlay-0\"]/snack-bar-container"),"ForceReload page popup")
     }
-
-
 
 }
 
